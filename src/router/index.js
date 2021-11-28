@@ -5,7 +5,6 @@ import About from "../views/AboutPage.vue"
 const routes = [
     { path: "/", component: Home },
     { path: "/favorites", component: Favorites },
-    { path: "/favorites", component: Favorites },
     { path: "/about", component: About }
   ];
 
