@@ -1,17 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container flex flex-col justify-center items-center mx-auto my-8 py-10">
+    <Loading/>
+    <Navigation/>
+    <div :style="{'background-image': 'url(' + require('./assets/bg.png') + ')'}"
+        class="max-w-5xl bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center">
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Loading from './components/Loading.vue'
+import Navigation from './components/Navigation.vue'
+
+import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Loading,
+    Navigation
+  },
+  created () {
+    this.getFavorites()
+    document.title = "Search forks repository";
+  },
+  methods: {
+    ...mapActions({
+      getFavorites:'GET_FAVORITES'
+    })
   }
 }
 </script>
@@ -21,8 +38,5 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
