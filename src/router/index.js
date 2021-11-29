@@ -10,7 +10,6 @@ const routes = [
       })
      },
     { path: "/favorites", component: Favorites },
-    { path: "/favorites", component: Favorites },
     { path: "/about", component: About }
   ];
 
