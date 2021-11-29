@@ -28,7 +28,7 @@
             About
           </h1>
           <div class="w-full text-center">
-            <div class="max-w-sm mx-auto p-1 pr-0 flex items-center">
+            <div class="max-w-sm mx-auto p-1 pr-0">
               Application for finding repositories forks
             </div>
           </div>

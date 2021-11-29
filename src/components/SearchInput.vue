@@ -7,14 +7,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'inputSearch',
     computed: {
-      ...mapState({
-        message: state => state.owner
+      ...mapGetters({
+        message: 'getSearch'
       })
+      /*...mapState({
+        message: state => state.owner
+      })*/
     },
     methods: {
       updateMessage (e) {

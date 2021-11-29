@@ -3,7 +3,12 @@ import Favorites from "../views/FavoritesPage.vue"
 import About from "../views/AboutPage.vue"
 
 const routes = [
-    { path: "/", component: Home },
+    { path: "/",
+      component: Home,
+      props: (route) => ({
+        query: route.query.q
+      })
+     },
     { path: "/favorites", component: Favorites },
     { path: "/favorites", component: Favorites },
     { path: "/about", component: About }

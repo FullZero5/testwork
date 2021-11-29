@@ -1,4 +1,7 @@
  const getters = {
+    getSearch : state => {   
+      return state.owner + '/' + state.repositoryName || ''
+    },
     totalForks: state => {
       return state.forks.length
     },

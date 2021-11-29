@@ -28,7 +28,14 @@ export default {
       delta: 2,
     };
   },
+  created() {
+    this.$route.params.page = this.page
+  },
   watch:{
+    page: {
+     handler: function (val, oldVal) { console.log(val, oldVal) },
+     immediate: true
+    },
     $route (to){
       let { page } = to.query
       console.log(page)
